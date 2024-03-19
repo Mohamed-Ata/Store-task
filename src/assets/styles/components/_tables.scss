@@ -1,0 +1,206 @@
+/* overrite all tables
+============================*/
+.table{
+    border-collapse: separate;
+    border-spacing: 0px 1.2rem;
+    color: $text-color;
+    margin-bottom: 0;
+    thead th{
+        font-weight: 600;
+        text-transform: capitalize;
+        border: none;
+        background-color: transparent;
+        font-size: 1.6rem;
+        vertical-align: middle;
+        padding: 1rem 3rem;
+        color: #000;
+    }
+    td{
+        padding: 1.5rem 2rem;
+        vertical-align: middle;
+        border-width: 2px 0 2px 1px;
+        border-style: solid;
+        border-color: #eaeaea;
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        border-right-width: 0;
+        border-left-width: 0;
+        [dir="rtl"] &{
+            border-width: 2px 1px 2px 0px;
+        }
+        &:first-child{
+            border-radius: 1rem 0 0 1rem;
+            border-left-width: 1px;
+            [dir="rtl"] &{
+                border-radius: 0 1rem 1rem 0;
+                border-left-width: 0;
+                border-right-width: 1px;
+            }
+        }
+        &:last-child{
+            border-radius: 0 1rem 1rem 0;
+            border-right-width: 1px;
+            [dir="rtl"] &{
+                border-radius: 1rem 0rem 0rem 1rem;
+                border-right-width: 2px;
+                border-left-width: 1px;
+            }
+        }
+        .title{
+            color: $second-color;
+            font-weight: 500;
+            font-size: 1.6rem;
+        }
+        .icon-img{
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            margin: 0 auto .5rem;
+        }
+       
+        &.action-btn{
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            max-width: 23rem;
+            margin: auto;
+            &.two-btns{
+                display: flex;
+                flex-flow: column;
+                .custom-btn{
+                    width: 100%;
+                    border-radius: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 1.2rem;
+                    &:first-child{
+                        background-color: $main-color;
+                    }
+                }
+            }
+            .icon-img{
+                margin-bottom: 0;
+            }
+        }
+        &.max-width{
+            max-width: 45rem;
+        }
+        .icon-btn{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.2rem;
+            height: 3.2rem;
+            font-size: 1.4rem;
+            border-radius: 1rem;
+            &.danger{
+                background-color: $red-color;
+                color: #fff;
+            }
+            &.show-on-hover{
+                opacity: 0;
+                visibility: hidden;
+                transition: $transition;
+            }
+        }
+    }
+    &.sm-td{
+        td{
+            padding: .5rem;
+        }
+    }
+    &.table-hovered{
+        tr:hover{
+            td{
+                background-color: $background-gray;
+            }
+        }
+    }
+    tr:hover{
+        .show-on-hover{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.table-responsive{
+    margin-bottom: 2rem;
+}
+
+/* custom-pagination
+============================*/
+.custom-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    .pagination{
+        margin-bottom: 0;
+        .pagination-first,
+        .pagination-last{
+            display: none;
+        }
+        .page-link{
+            font-size: 1.4rem;
+            border: 0;
+            border-radius: 5px;
+            margin: 0 .3rem;
+            padding: 0;
+            color: $text-color;
+            width: 3rem;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+        }
+        .page-item.active .page-link{
+            color: #fff;
+            background-color: $main-color;
+        }
+        .pagination-prev,
+        .pagination-next{
+            .page-link{
+                position: relative;
+                color: transparent;
+                user-select: none;
+                &:after{
+                    content: "\f054";
+                    font-family: 'font awesome 5 pro';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 3rem;
+                    height: 3rem;
+                    // background-size: contain;
+                    color: $text-color;
+                    [dir="rtl"] &{
+                        content: "\f053";
+                    }
+                }
+            }
+            &.disabled{
+                display: none;
+            }
+        }
+        .pagination-prev{
+            .page-link:after{
+                content: "\f053";
+                // transform: rotate(180deg);
+                [dir="rtl"] &{
+                    content: "\f054";
+                }
+            }
+        }
+    }
+
+    .pagenation-text{
+        font-size: 1.6rem;
+        margin: 0;
+        span.numbers{
+            font-weight: 600;
+            margin: 0 .5rem;
+        }
+    }
+}

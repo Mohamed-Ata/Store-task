@@ -1,0 +1,190 @@
+body.no-page-head{
+    .page-head{
+        display: none;
+    }
+}
+
+.section.has-page-head{
+    .section-head{
+        background-color: $background-gray;
+        margin-bottom: 3.2rem;
+        > .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2.1rem 1.5rem;
+        }
+        .title{
+            text-transform: capitalize;
+        }
+    }
+    &.page-head-tr{
+        .section-head{
+            background-color: transparent;
+            > .container{
+                padding-top: 5.6rem;
+            }
+            .title{
+                font-size: 3.6rem;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+
+.brand-box{
+    padding: 3.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    .box-item__head{
+        margin-bottom: 0;
+    }
+    .box-item__content{
+        .title{
+            margin-bottom: .6rem;
+        }
+    }
+}
+
+/* brand details
+=========================*/
+.details-page{
+    &__head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3.5rem;
+        .title{
+            color: $text-color;
+            font-size: 3.6rem;
+        }
+        .actions{
+            .icon-btn{
+                border: 0;
+                color: #56b1b2;
+                font-size: 2.4rem;
+                background-color: transparent;
+                padding: 0;
+                margin-right: 2rem;
+                transition: $transition;
+                [dir="rtl"] &{
+                    margin-right: 0;
+                    margin-left: 2rem;
+                }
+                &:hover{
+                    color: $main-color;
+                }
+                &.delete:hover{
+                    color: $danger-color;
+                }
+                &:last-child{
+                    margin-right: 0;
+                    [dir="rtl"] &{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__content{
+        margin-bottom: 2.4rem;
+        .title{
+            color: $text-color;
+            font-size: 1.8rem;
+        }
+        p{
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            color: $text-color-gray;
+        }
+    }
+    .contact-info{
+        margin-bottom: 2rem;
+        .title{
+            color: $text-color;
+            text-transform: capitalize;
+        }
+        .social-list{
+            display: block;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            &__link{
+                display: block;
+                font-size: 1.6rem;
+                color: $text-color-gray;
+                margin-bottom: 1.5rem;
+                transition: $transition;
+                &:hover{
+                    color: $second-color;
+                    i{
+                        color: $second-color;
+                    }
+                }
+                i{
+                    margin-right: 1.2rem;
+                    font-size: 2.4rem;
+                    color: #000;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    text-align: center;
+                    transition: $transition;
+                    [dir="rtl"] &{
+                        margin-right: 0;
+                        margin-left: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media all and (max-width:991.98px){
+    .section.has-page-head {
+        .section-head>.container{
+            flex-wrap: wrap;
+            .title{
+                // margin-bottom: 2.4rem;
+                font-size: 3.2rem;
+                .dropdown-button{
+                    padding-right: 3rem;
+                    [dir="rtl"] &{
+                        padding-right: 0;
+                        padding-left: 3rem;
+                    }
+                    &:after{
+                        right: 0;
+                        [dir="rtl"] &{
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            .custom-btn.btn-lg{
+                padding: 1.2rem 2.5rem;
+            }
+            .custom-tabs{
+                margin-top: 1.4rem;
+            }
+        }
+    }
+    .brand-box{
+        padding: 1.5rem; 
+    }
+    .box-item.brand-box{
+        .box-item__hover {
+            .icon-btn{
+                width: 3.6rem;
+                height: 3.6rem;
+                font-size: 1.6rem;
+            }
+            .custom-btn{
+                padding: 1.2rem 2rem;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

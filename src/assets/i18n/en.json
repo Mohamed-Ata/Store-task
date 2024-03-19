@@ -1,0 +1,28 @@
+{
+    "login": "login",
+    "loginText": "Login now and organize your work",
+    "form": {
+       "userName": "User Name",
+       "password": "Password",
+       "resetPassword": "reset password",
+       "createNewAccount": "create New Account",
+       "dontHaveAccount": "I don’t have an account…",
+       "invalidUserName": "Invalid username or password"
+    },
+    "products": "products",
+    "contactUs": "contact us",
+    "aboutUs": "about us",
+    "pricing": "pricing",
+    "welcome": "welcome",
+    "addNewProduct": "add new product",
+    "productTitle": "product Title",
+    "category": "category",
+    "describtion": "describtion",
+    "price": "price",
+    "rating": "rating",
+    "reviews": "reviews",
+    "actions": "actions",
+    "delete": "delete",
+    "cancel": "cancel",
+    "deleteMessage": "Your Product will be deleted, Are you sure"
+}

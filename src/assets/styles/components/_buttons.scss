@@ -1,0 +1,361 @@
+/* customize all buttons
+========================*/
+.custom-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $second-color;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 1.5rem 3rem;
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 500;
+    border: 0;
+    box-shadow: none;
+    border-radius: 4rem;
+    transition: $transition;
+    &:hover,
+    &.active{
+        background-color: $third-color;
+        color: $text-color;
+    }
+    i{
+        margin-right: .5rem;
+        [dir="rtl"] &{
+            margin-left: .5rem;
+            margin-right: 0;
+        }
+    }
+    
+    &.btn-lg{
+        padding: 1.5rem 6rem;
+    }
+    &.btn-md{
+        min-width: 17rem;
+    }
+    &.sm-radius{
+        border-radius: .4rem;
+    }
+    &.trans-btn,
+    &.cancel-btn{
+        background-color: transparent;
+        // border: 1px solid $border-color;
+        color: $text-color;
+        i.fa-spin{
+            font-size: 1.9rem;
+            margin: 0;
+        }
+    }
+    &.trans-btn{
+        &:hover{
+            background-color: $main-color;
+            border-color: $main-color;
+            color: #fff;
+        }
+    }
+    &.cancel-btn:hover{
+        background-color: $danger-color;
+        border-color: $danger-color;
+        color: #fff;
+    }
+    &.primary-btn{
+        background-color: $main-color;
+        color: #fff;
+        &:hover,
+        &.active{
+            background-color: $third-color;
+            color: $text-color;
+        }
+    }
+    .info-text{
+        font-size: 1.4rem;
+        font-weight: 300;
+        position: absolute;
+        right: 3.5rem;
+        text-transform: none;
+        [dir="rtl"] &{
+            right: auto;
+            left: 3.5rem;
+        }
+    }
+}
+
+.btn-link{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    color: $second-color;
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-transform: capitalize;
+    transition: $transition;
+    &:hover{
+        color: $main-color;
+    }
+    &.danger{
+        color: #ff0000;
+    }
+}
+.buttons-wrapper{
+    .btn-link{
+        margin-right: 2.4rem;
+        [dir="rtl"] &{
+            margin-right: 0;
+            margin-left: 2.4rem;
+        }
+    }
+}
+
+.btns-wd-50{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .custom-btn{
+        flex-grow: 1;
+        margin-right: .8rem;
+        margin-bottom: 1rem;
+        [dir="rtl"] &{
+            margin-right: 0;
+            margin-left: .8rem;
+        }
+        &:last-child{
+            margin-right: 0;
+            [dir="rtl"] &{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+/* icon-btn
+=======================*/
+.icon-btn{
+    width: 4.6rem;
+    height: 4.6rem;
+    border: 0;
+    border-radius: $border-radius;
+    background-color: $second-color;
+    color: #fff;
+    box-shadow: none;
+    font-size: 2.2rem;
+    &.delete{
+        background-color: $danger-color;
+        margin-right: 1rem;
+        [dir="rtl"] &{
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+    }
+}
+.search-btn{
+    width: 10rem;
+    height: 4rem;
+    margin-left: 1rem;
+    border: 0;
+    background-color: $second-color;
+    color: #fff;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    transition: $transition;
+    [dir="rtl"] &{
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+    &:hover{
+        background-color: $main-color;
+    }
+}
+/* delete and edit btn with icon
+=======================*/
+
+.action-btn{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: $text-color;
+    text-transform: capitalize;
+    margin: 0 .5rem .5rem;
+    transition: all .4s ease;
+    i{
+        // display: inline-block;
+        // vertical-align: middle;
+        margin-right: 1rem;
+        [dir="rtl"] &{
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+    }
+    span.text{
+        position: relative;
+        &:after{
+            position: absolute;
+            content: "";
+            bottom: -.5rem;
+            width: 0;
+            right: 50%;
+            height: 2px;
+            background-color: $main-color;
+            transition: all .4s ease;
+        }
+    }
+    
+    &:hover{
+        color: $main-color;
+        span.text:after{
+            width: 100%;
+            right: 0;
+        }
+    }
+    &.btn-delete{
+        color: $danger-color;
+        span.text{
+            &:after{
+                background-color: $danger-color;
+            }
+        }
+    }
+}
+
+
+/* link-btn
+======================*/
+.link-btn{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: $main-color;
+    text-decoration: underline;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    transition: all .4s ease;
+    &:hover{
+        color: $main-color;
+    }
+    [dir="rtl"] &{
+        letter-spacing: 0;
+    }
+    &.no-border{
+        text-decoration: none;
+        .icon-btn{
+            img{
+                width: 2rem;
+            }
+        }
+    }
+}
+
+.back-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: #979797;
+    color: #ffffff;
+    border: 0;
+    font-size: 2.5rem;
+    margin-right: 1.6rem;
+    transition: $transition;
+    [dir="rtl"] &{
+        margin-right: 0;
+        margin-left: 1.6rem;
+        i:before{
+            content: "\f178";
+        }
+    }
+    &:hover{
+        color: #fff;
+        background-color: $main-color;
+    }
+
+}
+
+
+/* toggle switch button
+======================*/
+.switch-btn{
+    position: relative;
+    display: inline-block;
+    width: 4.2rem;
+    height: 1.6rem;
+    margin: 0 0rem 0 1rem;
+    [dir="rtl"] &{
+        margin: 0 1rem 0 0;
+    }
+    input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:checked {
+            + .slider {
+                background-color: $main-color;
+                &:before {
+                    transform: translateX(2rem);
+                }
+            }
+        }
+        &:focus + .slider {
+            box-shadow: 0 0 1px $main-color;
+        }
+    }
+    .slider{
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        transition: .4s;
+        &:before {
+            position: absolute;
+            content: "";
+            height: 2.4rem;
+            width: 2.4rem;
+            left: -1px;
+            bottom: -4px;
+            background-color: $main-color;
+            transition: .4s;
+        }
+        &.round {
+            border-radius: 3.5rem;
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+
+
+@media all and (max-width:767.98px){
+    .custom-btn{
+        font-size: 1.4rem;
+        padding: 1.2rem 2.5rem;
+        &.btn-lg{
+            padding: 1.5rem 3rem;
+        }
+    }
+    .back-link{
+        font-size: 1.4rem;
+    }
+    .back-btn{
+        min-width: 4.8rem;
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 1.8rem;
+        margin-right: 1rem;
+        [dir="rtl"] &{
+            margin-right: 0;
+            margin-left: 1rem;
+        }
+    }
+}

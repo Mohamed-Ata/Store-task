@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+//Fonts
+$text-font-stack: 'roboto', Sans-Serif;
+$text-font-secondary: 'cairo';
+// @if $direction == ltr {
+//   $text-font-stack: 'frutiger', 'Arial', sans-serif !important;
+// } @else {
+//   $text-font-stack: 'frutiger', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important;;
+// }
+
+/// Code (monospace) font family
+// $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Relative or absolute URL where all assets are served from
+$base-url: '/assets/' !default;
+
+$main-color: #527bbd;
+$second-color: #23b0b1;
+$third-color: #ffefa0;
+$danger-color: #DC0610;
+$red-color: #e1585b;
+$yellow-color: #f7ec59;
+$active-color: #a8e268;
+
+// Text color
+$text-color: #000000;
+$text-color-gray: #7f7f7f;
+$placeholder-color: #c0c0c0;
+
+// background colors
+$background-color: #f5f5f5;
+$background-gray: #f7f7f7;
+
+$border-color: #97979733;
+$input-border-color: #97979733;
+
+
+// box-shadow
+$box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.04);
+$transition: all .4s ease;
+
+
+$border-radius: .4rem;
+
+

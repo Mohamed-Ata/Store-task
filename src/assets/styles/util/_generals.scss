@@ -1,0 +1,68 @@
+/* utlities classes
+============================*/
+.ar-text{
+  font-family: 'cairo';
+}
+.text-end{
+  text-align: end;
+}
+.bold{
+  font-weight: bold!important;
+}
+.text-color{
+  color: $text-color!important;
+}
+.text-color-gray{
+  color: $text-color-gray!important;
+}
+.text-lg{
+  font-size: 4.8rem!important;
+}
+.text-md{
+  font-size: 3.6rem!important;
+}
+// gutters
+.md-gutters{
+  margin-right: -1rem;
+  margin-left: -1rem;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.sm-gutters{
+  margin-right: -.5rem;
+  margin-left: -.5rem;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+}
+
+
+.width-50{
+  width: 50%!important;
+}
+.width-30{
+  width: 30%!important;
+}
+
+.mt-65{
+  margin-top: 6.5rem!important;
+}
+.mb-56{
+  margin-bottom: 5.6rem!important;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.capitalize{
+  text-transform: capitalize!important;
+}

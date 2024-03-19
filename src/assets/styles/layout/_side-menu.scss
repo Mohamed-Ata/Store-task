@@ -1,0 +1,183 @@
+.side-menu{
+    position: fixed;
+    top: 80px;
+    width: 271px;
+    height: calc(100vh - 80px);
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: $box-shadow;
+    left: -100%;
+    transition: $transition;
+    [dir="rtl"] &{
+        left: auto;
+        right: -100%;
+    }
+    &.opened{
+        left: 0;
+        [dir="rtl"] &{
+            left: auto;
+            right: 0;
+        }
+    }
+    &__head{
+        position: relative;
+        padding: 6rem 3.5rem 2.4rem;
+        background-color: $third-color;
+        overflow: hidden;
+        .shape{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 60%;
+            background-image: url('../../images/bullet-points.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+            [dir="rtl"] &{
+                right: auto;
+                left: 0;
+            }
+        }
+        .profile-name{
+            position: relative;
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: $text-color;
+            margin-bottom: 1.6rem;
+            z-index: 1;
+        }
+        .profile-link{
+            display: block;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            margin-bottom: .6rem;
+            color: $text-color;
+            transition: $transition;
+            &:hover{
+                color: $main-color;
+            }
+        }
+        &:before{
+            content: "";
+            position: absolute;
+            top: -2.5rem;
+            right: -13rem;
+            width: 17.5rem;
+            height: 17.5rem;
+            background-color: $main-color;
+            border-radius: 10rem 10rem 0 11rem;
+            [dir="rtl"] &{
+                right: auto;
+                left: -13rem;
+                border-radius: 10rem 11rem 0 10rem;
+            }
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            width: 4.5rem;
+            height: 4.5rem;
+            border: 1rem solid $main-color;
+            border-radius: 100%;
+            bottom: -2.5rem;
+            right: 5rem;
+            [dir="rtl"] &{
+                right: auto;
+                left: 5rem;
+            }
+        }
+    }
+    &__content{
+        padding: 3.6rem;
+        padding-bottom: 64px;
+        max-height: calc(100vh - (203px + 65px));
+        overflow: auto;
+        .side-menu-links{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            .side-menu-item{
+                margin-bottom: 1rem;
+            }
+            .side-menu-link{
+                text-transform: capitalize;
+                color: $text-color;
+                font-size: 1.8rem;
+                font-weight: 500;
+                transition: $transition;
+                &:hover{
+                    color: $main-color;
+                }
+            }
+            .dropdown{
+                .side-menu-link{
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    &:after{
+                        content: "\f078";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 2rem;
+                        height: 2rem;
+                        font-family: "Font Awesome 5 Pro";
+                        [dir="rtl"] &{
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                }
+                .dropdown-menu{
+                    position: relative!important;
+                    width: 100%;
+                    min-width: auto;
+                    float: none;
+                    margin: 1rem 0 0;
+                    padding: 0;
+                    border: 0;
+                    box-shadow: none;
+                    transform: none!important;
+                    .dropdown-item{
+                        font-size: 1.8rem;
+                        padding: .8rem 0 .8rem 1.2rem;
+                        margin: 0;
+                        transition: $transition;
+                        &:hover{
+                            color: $main-color;
+                            background-color: transparent;
+                        }
+                        [dir="rtl"] &{
+                            padding: .8rem 1.2rem .8rem 0;
+                        }
+                    }
+                }
+                &.show{
+                    .side-menu-link:after{
+                        content: "\f077";
+                    }
+                }
+            }
+        }
+
+    }
+    &__footer{
+        background-color: rgba(246, 79, 80, 0.2);
+        padding: 1.6rem 3.6rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        .logout{
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: transparent;
+            color: #ff4545;
+            font-size: 1.8rem;
+            text-transform: capitalize;
+        }
+    }
+}

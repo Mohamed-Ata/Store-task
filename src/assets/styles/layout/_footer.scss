@@ -1,0 +1,198 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer{
+  .main-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    .footer-brand{
+      margin: 3.2rem 0;
+      padding: 0;
+      transition: transition;
+      .logo-text{
+        margin-bottom: 0;
+        color: $text-color;
+        text-transform: capitalize;
+        font-weight: 300;
+        font-size: 2rem;
+        b{
+          font-weight: bold;
+        }
+      }
+    }
+    .footer-nav{
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      .nav-item{
+        .nav-link{
+          font-size: 1.6rem;
+          color: $text-color;
+          text-transform: capitalize;
+          padding: 0 1.6rem;
+          transition: $transition;
+          &:hover{
+            color: $main-color;
+          }
+        }
+        &:last-child{
+          .nav-link{
+            padding-right: 0;
+            [dir="rtl"] &{
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-copyRight{
+    .copyRight-content{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 3.2rem 0 2.4rem;
+      > p {
+        color: #7f7f7f;
+        font-weight: 300;
+        margin-bottom: 0;
+      }
+    }
+    .copyRight-links{
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      .copyRight-link{
+        color: #7f7f7f;
+        padding: 0 .5rem;
+        font-weight: 300;
+        transition: $transition;
+        &:hover{
+          color: $second-color;
+        }
+      }
+      li:last-child{
+        .copyRight-link{
+          padding-right: 0;
+          [dir="rtl"] &{
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+  @media all and (max-width:991.98px){
+    .footer-copyRight{
+      .copyRight-content{
+        flex-flow: column;
+        > .social-list,
+        > p{
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  @media all and (max-width:767.98px){
+    .main-footer{
+      flex-flow: column;
+      // align-items: flex-start;
+      .footer-brand{
+        margin: 2.4rem 0 1.4rem;
+      }
+      .footer-nav{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: .8rem;
+        .nav-item{
+          .nav-link{
+            padding: 0 .5rem;
+          }
+        }
+      }
+      .footer-widget{
+        width: 50%;
+        margin-bottom: 3rem;
+      }
+    }
+    .footer-copyRight {
+      .copyRight-links{
+        margin-bottom: 1rem;
+      }
+      .copyRight-content{
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 2rem;
+        > p{
+          order: 3;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  @media all and (max-width:450px){
+    .footer-top{
+      flex-direction: column;
+      .logos{
+        margin-bottom: 3rem;
+      }
+    }
+    .main-footer{
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 1rem;
+      .footer-widget{
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .footer-copyRight .copyRight-content>.social-list{
+      flex-wrap: wrap;
+      justify-content: center;
+      .social-list__item:first-child{
+        width: 100%;
+        text-align: center;
+        margin-bottom: .5rem;
+      }
+    } 
+    
+  }
+}
+
+
+/*social-list*/
+.social-list{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  &__item{
+    &:first-child{
+      font-weight: 600;
+      color: #7f7f7f;
+    }
+    .social-link{
+      color: #7f7f7f;
+      font-weight: 300;
+      padding: 0 .5rem;
+      transition: $transition;
+      &:hover{
+        color: $second-color;
+      }
+    }
+    &:last-child{
+      margin-left: 0;
+    }
+    
+  }
+}

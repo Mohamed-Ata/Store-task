@@ -1,0 +1,76 @@
+<div class="page-content">
+    <section class="section page-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-7">
+                    <div class="content-item">
+                        <h2 class="title title-md">
+                            {{currentProduct.title}}
+                        </h2>
+                        
+                    </div><!--End content-item-->
+                    <div class="content-item">
+                        <h2 class="title title-md">
+                            Description
+                        </h2>
+                        <p>
+                            {{currentProduct.description}}
+                        </p>
+                    </div><!--End content-item-->
+                    <div class="content-item">
+                        <h2 class="title title-md">
+                            Category
+                        </h2>
+                        <p>
+                            {{currentProduct.category}}
+                        </p>
+                    </div><!--End content-item-->
+                    <div class="content-item">
+                        <h2 class="title title-md">
+                            Price
+                        </h2>
+                    </div><!--End content-item-->
+                    <div class="campaign-budget">
+                        <!-- <h4 class="inner-title">
+                            Limited Budget
+                        </h4> -->
+                        <div class="d-flex justify-content-between">
+                            <span>${{currentProduct.price}}</span>
+                            <!-- <span>30 Nov - 31 Nov 2020</span> -->
+                        </div>
+                    </div><!--End compaign-budget-->
+
+                    <div class="content-item">
+                        <h2 class="title title-md">
+                            Rating <small>({{currentProduct.rating?.rate}})</small>
+                        </h2>
+                        <p>
+                            {{currentProduct.rating?.count}} review
+                        </p>
+                    </div><!--End content-item-->
+
+                    <!-- <div class="buttons-wrapper" *ngIf="currentUser.role == userRole.Admin">
+                        <button class="btn-link" type="button" >edit</button>
+                        <button class="btn-link danger" type="button" data-toggle="modal" data-target="#confirmationDelet">delete</button>
+                    </div> -->
+                </div><!--End col-->
+                <div class="col-lg-4">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img [src]="currentProduct.image" alt="product image">
+                          </div>
+                          
+                        </div>
+                        <!-- <ol class="carousel-indicators">
+                            
+                            <li data-target="#carousel" data-slide-to="1">
+                                <img [src]="currentProduct.image" class="indicator" alt="...">
+                            </li>
+                        </ol> -->
+                      </div>
+                </div><!--End col-->
+            </div><!--End row-->
+        </div><!--End conainer-->
+    </section>
+</div><!--End page-content-->

@@ -1,0 +1,81 @@
+<app-page-header/>
+<div class="page-content">
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="box-item float-box with-shapes">
+                        <div class="shapes"></div>
+                        <div class="box-item__head">
+                            <h1 class="title title-lg">
+                                {{'login' | transloco}}
+                            </h1>
+                            <p>
+                                {{'loginText' | transloco}}
+                            </p>
+                        </div><!--ENd box-item__head-->
+                        <div class="box-item__content">
+                            <form class="form" [formGroup]="loginForm" (ngSubmit)="procedLogin()">
+                                <div class="form-group">
+                                    <label class="label">
+                                        {{'form.userName' | transloco}}
+                                    </label>
+                                    <input class="form-control" type="text" formControlName="userName" placeholder="user" [ngClass]="{
+                                        'is-invalid':
+                                        loginForm.controls['userName'].errors &&
+                                          (loginForm.controls['userName'].dirty ||
+                                          loginForm.controls['userName']
+                                              .touched ||
+                                            formSubmitted)
+                                      }">
+
+                                    <div class="errors" *ngIf="loginForm.controls['userName']?.errors && (loginForm.controls['userName']?.dirty || loginForm.controls['userName']?.touched)">
+                                        <p class="error-message" *ngIf="loginForm.controls['userName']?.errors?.['required']">
+                                             user name is required
+                                        </p>
+                                    </div>
+                                </div><!--ENd form-group-->
+                                
+                                <div class="form-group has-icon">
+                                    <label class="label">
+                                        {{'form.password' | transloco}}
+                                    </label>
+                                    <a  class="inline-label-link">{{'form.resetPassword' | transloco}}</a>
+                                    <input class="form-control" type="password" formControlName="password" placeholder="Write at least 8 character with 1 symbol , 1 number and 1 capital character" 
+                                    [ngClass]="{
+                                        'is-invalid':
+                                        loginForm.controls['password'].errors &&
+                                          (loginForm.controls['password'].dirty ||
+                                          loginForm.controls['password']
+                                              .touched ||
+                                            formSubmitted)
+                                      }">
+                                    <!-- <i class="far fa-eye"></i> -->
+
+                                    <div class="errors" *ngIf="loginForm.controls['password']?.errors && (loginForm.controls['password']?.dirty || loginForm.controls['password']?.touched)">
+                                        <p class="error-message" *ngIf="loginForm.controls['password']?.errors?.['required']">
+                                            password is required
+                                        </p>
+                                    </div>
+                                </div><!--ENd form-group-->
+                                
+                                <p class="error-message" *ngIf="error != ''">
+                                    {{'form.invalidUserName' | transloco}}
+                               </p>
+
+                                <div class="form-group">
+                                    <button class="custom-btn btn-block" type="submit">
+                                        {{'login' | transloco}}
+                                    </button>
+                                </div><!--ENd form-group-->
+                                <p class="form-text">
+                                    {{'form.dontHaveAccount' | transloco}}<a href="01-register.html">{{'form.createNewAccount' | transloco}}</a>
+                                </p>
+                            </form>
+                        </div><!--End box-item__content-->
+                    </div><!--End box-item-->
+                </div><!--End col-->
+            </div><!--End row-->
+        </div><!--End container-->
+    </section>
+</div><!--End page-content-->

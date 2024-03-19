@@ -1,0 +1,47 @@
+/* overwrite bootstrap tabs
+===========================*/
+.nav-tabs{
+    border-bottom: 0;
+    margin-bottom: 5.6rem;
+    .nav-link{
+        width: 50%;
+        font-size: 2.4rem;
+        font-weight: 300;
+        text-transform: capitalize;
+        border: 0;
+        border-bottom: 1px solid rgba(151 ,151, 151 , 0.2);
+        text-align: center;
+        padding: 1.9rem 0;
+        color: #7f7f7f;
+        &.active{
+            border-bottom: 3px solid $main-color;
+            font-weight: bold;
+        }
+    }
+    &.links-style{
+        margin-bottom: 0;
+        .nav-link{
+            width: auto;
+            border: 0;
+            font-size: 1.8rem;
+            margin: 0 1rem;
+            padding: 0;
+            &.active{
+                color: $second-color;
+                border: 0;
+                background-color: transparent;
+            }
+        }
+    }
+    @media all and (max-width:991.98px){
+        .nav-link{
+            font-size: 1.8rem;
+        }
+    }
+    @media all and (max-width:767.98px){
+        .nav-link{
+            font-size: 1.6rem;
+            padding: 1.4rem 0;
+        }
+    }
+}

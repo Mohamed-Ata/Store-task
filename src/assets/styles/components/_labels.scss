@@ -1,0 +1,47 @@
+/* labels and tags with its all status (canceled , pending , active , etc)
+==========================================================================*/
+.status-label{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem 2rem;
+    background-color: #dfdfdb;
+    border-radius: 1rem;
+    color: #9b9b9b;
+    min-width: 9.5rem;
+    &.canceld{
+        background-color: $red-color;
+        color: #fff;
+    }
+    &.pending{
+        background-color: $yellow-color;
+        color: $text-color
+    }
+    &.active{
+        background-color: $active-color;
+        color: $text-color;
+    }
+}
+
+
+/*filter-tag*/
+.filter-tag{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(82, 123, 189, 0.21);
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    padding: .8rem 1.3rem;
+    .remove-item{
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        background-color: transparent;
+        margin-left: 1rem;
+        [dir="rtl"] &{
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+    }
+}

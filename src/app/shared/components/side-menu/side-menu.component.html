@@ -1,0 +1,36 @@
+<!-- Start User Side-menu
+    ======================-->
+    <div class="side-menu" id="sideMenu" [ngClass]="{ 'opened': isOpened }">
+        <div class="side-menu__head">
+            <span class="shape"></span>
+            <h3 class="profile-name capitalize">
+                @if(currentUser?.username){
+                    {{currentUser?.username}} <br>
+                }
+                
+            </h3>
+            <a href="#" class="profile-link">edit profile</a>
+            <a href="#" class="profile-link">change passowrd</a>
+        </div><!--End side-menu--head-->
+        <div class="side-menu__content">
+            @if(currentUser?.role == role.Admin){
+                <ul class="side-menu-links">
+                    <li class="side-menu-item">
+                        <a [routerLink]="['/dashboard']" class="side-menu-link">Products </a>
+                    </li>
+                    <!-- <li class="side-menu-item">
+                        <a href="Dashboard-Influencer.html" class="side-menu-link"></a>
+                    </li> -->
+                    <li class="side-menu-item">
+                        <a routerLink="/dashboard/add-product" class="side-menu-link">add product </a>
+                    </li>
+                    
+                    
+                </ul>
+            }
+            
+        </div><!--End side-menu-content-->
+        <div class="side-menu__footer">
+            <button class="logout" type="button" (click)="logOut()">logout</button>
+        </div>
+    </div><!--End side-menu -->

@@ -1,0 +1,16 @@
+
+<!-- page wrapper -->
+<div id="wrapper" [ngClass]="{ 'menu-open': isOpen }">
+  <app-navbar (toggleMenuEvent)="togglemenu()"/>
+  <app-side-menu [isOpened]="isOpen"/>
+  <main id="main-content">
+    <router-outlet />
+    <app-loading-screen *ngIf="loader"></app-loading-screen>
+  </main>
+  <app-footer/>
+</div>
+<div id="overlay"></div>
+
+
+
+

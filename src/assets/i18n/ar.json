@@ -1,0 +1,28 @@
+{
+    "login": "تسجيل الدخول",
+    "loginText": "سجل دخول الآن لتنظم أعمالك",
+    "form": {
+       "userName": "اسم المستخدم",
+       "password": "كلمة المرور",
+       "resetPassword": "استعادة كلمة المرور",
+       "createNewAccount": "إنشاء حساب جديد",
+       "dontHaveAccount": "ليس لديك حساب ...",
+       "invalidUserName": "اسم المستخدم أو كلمة المرور غير صحيحة"
+    },
+    "products": "المنتجات",
+    "contactUs": "تواصل معنا",
+    "aboutUs": "اتصل بنا",
+    "pricing": "الأسعار",
+    "welcome": "مرحبا",
+    "addNewProduct": "اضافة منتج",
+    "productTitle": "عنوان المنتج",
+    "category": "الفئة",
+    "describtion": "الوصف",
+    "price": "السعر",
+    "rating": "التقييم",
+    "reviews": "مراجعات",
+    "actions": "الإجراء",
+    "delete": "حذف",
+    "cancel": "إلغاء",
+    "deleteMessage": "سوف يتم حذف المنتج , هل أنت متأكد"
+}

@@ -1,0 +1,117 @@
+<!-- @@include ./partials/layout/page-head.html -->
+<div class="page-content">
+    <section class="section brand-compaigns">
+        
+        <div class="container">
+            <div class="tabs-wrapper custom-tabs">
+                <!--this will show only with history tab-->
+                <h2 class="title title-36 text-color">
+                    {{'welcome' | transloco}} Admin,
+                </h2>
+                 
+                <div class="nav nav-tabs links-style">
+                    <a class="custom-btn capitalize" routerLink="add-product">{{'addNewProduct' | transloco}}</a>
+                </div>
+                
+            </div><!--ENd tabs-wrapper-->
+            <app-filter></app-filter>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">{{'productTitle' | transloco}}</th>
+                        <th scope="col">{{'category' | transloco}}</th>
+                        <th scope="col">{{'describtion' | transloco}}</th>
+                        <th scope="col">{{'price' | transloco}}</th>
+                        <th scope="col">{{'rating' | transloco}}</th>
+                        <th scope="col">{{'reviews' | transloco}}</th>
+                        <th scope="col">{{'actions' | transloco}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @for (product of products; track product.id) {
+                            <tr>
+                                <td>
+                                    <a class="title" [routerLink]="['/products/product-details/', product.id]">
+                                        {{product.title}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{product.category}}
+                                </td>
+                                <!-- <td>
+                                    <span class="status-label pending">
+                                        Waiting
+                                    </span>
+                                </td> -->
+                                <td>
+                                    {{product.description.slice(0,100)}}
+                                </td>
+                                <td>
+                                    {{product.price}}
+                                </td>
+                                <td>
+                                    {{product.rating?.rate}}
+                                </td>
+                                <td>
+                                    {{product.rating?.count}}
+                                </td>
+
+                                <td style="width: 120px;">
+                                    <button type="button" (click)="openModal(deleteModal,product.id)" class="icon-btn danger me-10" title="delete product">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                    <a [routerLink]="['edit-product/', product.id]" class="icon-btn info " title="delete product">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </td>
+                              </tr>
+                        }
+                    
+                    </tbody>
+                  </table>
+            </div><!--End tabel-responsive-->
+            <div class="custom-pagination d-flex justify-content-end">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <i class="fa fa-chevron-left"></i>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div><!--End site-pagination-->
+            
+        </div><!--End container-->
+    </section>
+</div><!--End page-content-->
+
+
+<ng-template #deleteModal let-modal>
+  <div class="modal-content">
+    <div class="modal-body">
+        <div class="popup-icon">
+            <span class="icon">
+                <i class="fas fa-trash"></i>
+            </span>
+        </div>
+        <p class="popup-text">
+            {{'deleteMessage' | transloco}}
+        </p>
+    </div>
+    <div class="modal-footer popup-actions">
+      <button type="button" class="custom-btn btn-transparent" data-dismiss="modal" (click)="modal.dismiss('Cross click')">{{'cancel' | transloco}}</button>
+      <button type="button" class="custom-btn delete-btn" (click)="confirmDelete()">{{'delete' | transloco}}</button>
+    </div>
+  </div>
+
+</ng-template>

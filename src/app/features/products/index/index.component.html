@@ -1,0 +1,43 @@
+<div class="page-content">
+    <section class="section brand-compaigns pt-24">
+        
+        <div class="container">
+            <app-filter></app-filter>
+            @for (item of productsByGroup; track $index) {
+                <h2 class="title title-36 text-color capitalize">
+                    {{item.category}}
+                </h2>
+                <div class="row md-gutters">
+                    @defer ( prefetch on idle) {
+                        @for (product of item.products; track product.id) {
+                            <div class="col-lg-3 col-md-6">
+                                <app-product-card [product]="product"/>
+                            </div><!--End col-->
+                        }
+                    } 
+    
+                      @placeholder (minimum 1000ms) {
+                        
+                        @for (item of products; track $index) {
+                            <div class="col-lg-3 col-md-6">
+                                <app-skelton-loading/>
+                            </div><!--End col-->
+                        }
+                      }
+                      @loading (after 300ms; minimum 1000s) {
+                        @for (item of products; track $index) {
+                            <div class="col-lg-3 col-md-6">
+                                <app-skelton-loading/>
+                            </div><!--End col-->
+                        }
+                      }
+    
+                    
+                </div><!--End row-->
+            }
+            
+            
+        </div><!--End container-->
+    </section>
+</div><!--End page-content-->
+

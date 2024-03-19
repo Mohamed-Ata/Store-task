@@ -1,0 +1,179 @@
+<div class="page-head style2">
+    <div class="container">
+        <div class="shape-radius"></div>
+        <div class="shape-radius shape-sm"></div>
+        <div class="bullets-points sm-vertical standalone">
+            <img src="../../../../assets/images/bullet-points.png" alt="">
+        </div>
+        <div class="page-head__content">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a routerLink="/Dashboard">Dashboard</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Add New Product</li>
+                </ol>
+            </nav>
+            <h1 class="title title-lg">
+                Add New Product
+            </h1>
+        </div><!--End page-head-content-->
+    </div><!--End container-->
+</div><!--End page-head-->
+
+<div class="page-content">
+    <section class="section">
+        <form class="form-wizard" [formGroup]="productForm" (ngSubmit)="submitForm()">
+            
+            <div class="form-wizard__content">
+                <div class="container">
+                    <div class="row form-wizard__row">
+                        <div class="col-lg-3">
+                            <div class="form-row__head">
+                                <h2 class="title title-md">
+                                    Product Basic Info
+                                </h2>
+                                <p>
+                                    Write in brief about your Product 
+                                </p>
+                            </div><!--End form-row__head-->
+                        </div><!--End col-->
+                        
+                        <div class="col-lg-7">
+                            <div class="form-group">
+                                <label class="label">Product Title</label>
+                                <input class="form-control" type="text" placeholder="Write the name of the Product" formControlName="title" [ngClass]="{
+                                    'is-invalid':
+                                    productForm.controls['title'].errors &&
+                                      (productForm.controls['title'].dirty ||
+                                      productForm.controls['title']
+                                          .touched ||
+                                        formSubmitted)
+                                  }">
+
+                                <div class="errors" *ngIf="productForm.controls['title']?.errors && (productForm.controls['title']?.dirty || productForm.controls['title']?.touched || formSubmitted)">
+                                    <p class="error-message" *ngIf="productForm.controls['title']?.errors?.['required']">
+                                        Product Title is required
+                                    </p>
+                                </div>
+                                
+                            </div><!--End form-group-->
+                            <div class="form-group has-icon">
+                                <label class="label">Product Caregory</label>
+                                <select class="form-control" formControlName="category" [ngClass]="{
+                                    'is-invalid':
+                                    productForm.controls['category'].errors &&
+                                      (productForm.controls['category'].dirty ||
+                                      productForm.controls['category']
+                                          .touched ||
+                                        formSubmitted)
+                                  }">
+                                    <option selected [value]="null" class="placeHolder-select">Select Category</option>
+                                    <option *ngFor="let item of categories" [value]="item">
+                                        {{item}}
+                                    </option>
+                                    
+                                </select>
+                                <i class="fa fa-caret-down"></i>
+                            </div><!--End form-group-->
+
+                            <div class="errors" *ngIf="productForm.controls['category']?.errors && (productForm.controls['category']?.dirty || productForm.controls['category']?.touched || formSubmitted)">
+                                <p class="error-message" *ngIf="productForm.controls['category']?.errors?.['required']">
+                                    category is required
+                                </p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="label">Product Brief</label>
+                                <textarea class="form-control" placeholder="Let us know more about this new Product" rows="5" formControlName="description" [ngClass]="{
+                                    'is-invalid':
+                                    productForm.controls['description'].errors &&
+                                      (productForm.controls['description'].dirty ||
+                                      productForm.controls['description']
+                                          .touched ||
+                                        formSubmitted)
+                                  }"></textarea>
+
+                                <div class="errors" *ngIf="productForm.controls['description']?.errors && (productForm.controls['description']?.dirty || productForm.controls['description']?.touched || formSubmitted)">
+                                    <p class="error-message" *ngIf="productForm.controls['description']?.errors?.['required']">
+                                        description is required
+                                    </p>
+                                </div>
+                            </div><!--End form-group-->
+                            
+                        </div><!--End col-->
+                    </div><!--end form-wizard__row-->
+
+                    <div class="row form-wizard__row">
+                        <div class="col-lg-3">
+                            <div class="form-row__head">
+                                <h2 class="title title-md">
+                                    Product Requirements
+                                </h2>
+                                <p>
+                                    Let influencers follow your requirements and guidelines
+                                </p>
+                            </div><!--End form-row__head-->
+                        </div><!--End col-->
+                        <div class="col-lg-7">
+                            <div class="form-group">
+                                <label class="label">Product Price</label>
+                                <input class="form-control" type="number" placeholder="Ex: 300$" formControlName="price" [ngClass]="{
+                                    'is-invalid':
+                                    productForm.controls['price'].errors &&
+                                      (productForm.controls['price'].dirty ||
+                                      productForm.controls['price']
+                                          .touched ||
+                                        formSubmitted)
+                                  }">
+
+                                <div class="errors" *ngIf="productForm.controls['price']?.errors && (productForm.controls['price']?.dirty || productForm.controls['price']?.touched || formSubmitted)">
+                                    <p class="error-message" *ngIf="productForm.controls['price']?.errors?.['price']">
+                                        price is required
+                                    </p>
+                                </div>
+                            </div><!--End form-group-->
+
+                            <div class="form-group">
+                                <label class="label">Product Image Url</label>
+                                <input class="form-control" type="text" placeholder="" formControlName="image" [ngClass]="{
+                                    'is-invalid':
+                                    productForm.controls['image'].errors &&
+                                      (productForm.controls['image'].dirty ||
+                                      productForm.controls['image']
+                                          .touched ||
+                                        formSubmitted)
+                                  }">
+
+
+                                <div class="errors" *ngIf="productForm.controls['image']?.errors && (productForm.controls['image']?.dirty || productForm.controls['image']?.touched || formSubmitted)">
+                                    <p class="error-message" *ngIf="productForm.controls['image']?.errors?.['image']">
+                                        image url is required
+                                    </p>
+                                </div>
+                            </div><!--End form-group-->
+                            
+
+                            <div class="form-group d-flex align-items-center">
+                                <!--Use this button for from submit-->
+                                <!-- <button class="custom-btn btn-block" type="submit">
+                                    next
+                                    <span class="info-text">Next step: Target Audience</span>
+                                </button> -->
+                                <!-- <a href="13-dashboard-campaign.html" class="back-btn">
+                                    <i class="far fa-long-arrow-left"></i>
+                                </a> -->
+                                <button type="submit" class="custom-btn btn-block w-100">
+                                    {{isEdit ? 'Update' : 'Create'}}
+                                </button>
+                            </div><!--End form-group-->
+                            
+                        </div><!--End col-->
+
+                    </div><!--end form-wizard__row-->
+                    
+
+                </div><!--ENd container-->
+                
+            </div><!--End form-wizard__content-->
+        </form><!--End form-wizard-->
+    </section>
+</div><!--End page-content-->

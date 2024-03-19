@@ -1,0 +1,89 @@
+// -----------------------------------------------------------------------------
+// This file contains all media queries.
+// -----------------------------------------------------------------------------
+/* Responsive Style */
+// medium screen size (md) 'medium': 768px
+@include maxMedia(map-get($breakpoints, medium)) {
+
+    // @include header-md-media-breakpoint-down;
+    // @include default-md-media-breakpoint-down;
+    // @include header-md-media-breakpoint-down;
+    // @include default-md-media-breakpoint-down;
+    // @include home-md-media-breakpoint-down;
+    // @include footer-md-media-breakpoint-down;
+    // @include testimonial-md-media-breakpoint-down;
+    // @include question-details-md-media-breakpoint-down;
+
+
+}
+// small screen size (sm) 0 to small': 320px
+@include mediaBetween(0 , map-get($breakpoints, small)) {
+
+}
+
+// small screen size (sm) 0 to small': 320px
+@include mediaBetween(321px , 375px) {
+
+}
+// small screen size (sm) 0 to small': 320px
+// large screen size between (md) 'medium': 768px and (lg) 'large': 1024px
+@include mediaBetween(map-get($breakpoints, medium) + 1 , map-get($breakpoints, large)) {
+
+    // @include button-md-media-breakpoint-down;
+    // @include header-md-media-breakpoint-down;
+    // @include default-md-media-breakpoint-down;
+    // @include home-md-media-breakpoint-down;
+    // @include footer-md-media-breakpoint-down;
+    // @include question-details-md-media-breakpoint-down;
+    // @include header-lg-media-breakpoint-down;
+    // @include default-md-to-lg-media-breakpoint-down;
+
+
+}
+// large screen size between (md) 'large': 1024px and (lg) 'xlarge': 1999px
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-width: map-get($breakpoints, large) + 1) and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  // @include articles-min-md-media-breakpoint-down;
+  // @include header-ipad-pro-media-breakpoint-down;
+  // @include default-md-media-breakpoint-down;
+  // @include default-ipad-pro-media-breakpoint-down;
+
+}
+// medium screen more than 1200px
+@include minMedia(map-get($breakpoints, xlarge)) {
+
+// @include header-xl-media-breakpoint-up;
+// @include default-xl-media-breakpoint-up;
+// @include articles-min-md-media-breakpoint-down;
+
+
+}
+
+
+
+// ipad pro
+/* Portrait */
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+
+
+}
+
+/* Landscape */
+// ipad pro
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+
+
+
+
+}
